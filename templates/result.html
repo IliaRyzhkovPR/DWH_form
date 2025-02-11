@@ -20,19 +20,19 @@
           <p class="result-message">Your current approach is <strong>not aligned</strong> with cloud migration best practices.</p>
           <p class="result-cta">You need to take immediate action</strong> to modernise your data management strategy.</p>
           <p class="result-cta">Get our free guide: "Essential Steps to Modern Data Platform"</p>
-          <button onclick="showContactForm()" class="nhs-button-cta">Get Your Free Guide</button>
+          <button onclick="showContactForm()" class="nhs-button-cta" data-umami-event="Get Your Free Guide button">Get Your Free Guide</button>
       {% elif score <= 70 %}
           <p class="result-message">Your organisation has <strong>some</strong> readiness for cloud migration, but improvements are needed.</p>
           <p class="result-cta">Get our free guide: "Essential Steps to Modern Data Platform"</p>
-          <button onclick="showContactForm()" class="nhs-button-cta">Get Your Free Guide</button>
+          <button onclick="showContactForm()" class="nhs-button-cta" data-umami-event="Get Your Free Guide button">Get Your Free Guide</button>
       {% else %}
           <p class="result-message">Congratulations! Your current practices are <strong>well-aligned</strong> with modern cloud migration strategies.</p>
           <p class="result-cta">Get our free guide: "Essential Steps to Modern Data Platform" to keep up with ever-changing world of tech.</p>
-          <button onclick="showContactForm()" class="nhs-button-cta">Get Your Free Guide</button>
+          <button onclick="showContactForm()" class="nhs-button-cta" data-umami-event="Get Your Free Guide button">Get Your Free Guide</button>
       {% endif %}
   </div>
   <div class="text-center mt-4">
-    <a href="/" class="nhs-button">Retake the Questionnaire</a>
+    <a href="/" class="nhs-button" data-umami-event="Retake button">Retake the Questionnaire</a>
   </div>
   </div>
 </div>
@@ -66,7 +66,7 @@
               
               <!-- Submit Button -->
               <div class="text-center">
-                  <button type="submit" class="nhs-button">Submit</button>
+                  <button type="submit" class="nhs-button" data-umami-event="Contact button">Submit</button>
               </div>
           </form>
       </div>
