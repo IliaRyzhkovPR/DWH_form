@@ -1,0 +1,192 @@
+{% extends "base.html" %}
+
+{% block title %}Cloud Migration Preparedness Questionnaire{% endblock %}
+
+{% block content %}
+<div class="card shadow-sm">
+  <div class="card-body">
+    <form method="POST">
+      <!-- Question 1 -->
+      <div class="mb-3">
+        <label class="form-label">1. How do you implement Infrastructure as Code (IaC) for your data warehouse?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q1" value="None" required> 
+          <label class="form-check-label">None - We do not use Infrastructure as Code</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q1" value="SSDT"> 
+          <label class="form-check-label">SSDT (SQL Server Data Tools) </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q1" value="SQL Database Projects"> 
+          <label class="form-check-label">SQL Database Project</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q1" value="dbt"> 
+          <label class="form-check-label">dbt (Data Build Tool)</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q1" value="SQLMesh"> 
+          <label class="form-check-label">SQLMesh</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q1" value="Other"> 
+          <label class="form-check-label">Other (please specify):</label>
+          <input type="text" name="q1_other" class="form-control mt-2">
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="mb-3">
+        <label class="form-label">2. Which version control system do you use?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q2" value="None" required> 
+          <label class="form-check-label">None - We do not use version control</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q2" value="GitHub"> 
+          <label class="form-check-label">GitHub</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q2" value="GitLab"> 
+          <label class="form-check-label">GitLab</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q2" value="Azure DevOps"> 
+          <label class="form-check-label">Azure DevOps</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q2" value="Bitbucket"> 
+          <label class="form-check-label">Bitbucket</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q2" value="Other"> 
+          <label class="form-check-label">Other (please specify):</label>
+          <input type="text" name="q2_other" class="form-control mt-2">
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="mb-3">
+        <label class="form-label">3. Which common data model do you follow?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q3" value="None" required> 
+          <label class="form-check-label">None - We do not use a common data model</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q3" value="OMOP"> 
+          <label class="form-check-label">OMOP (Observational Medical Outcomes Partnership)</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q3" value="NHS Data Dictionary"> 
+          <label class="form-check-label">NHS Data Dictionary</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q3" value="FHIR"> 
+          <label class="form-check-label">FHIR (Fast Healthcare Interoperability Resources)</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q3" value="Other"> 
+          <label class="form-check-label">Other (please specify):</label>
+          <input type="text" name="q3_other" class="form-control mt-2">
+        </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="mb-3">
+        <label class="form-label">4. What CI/CD tools do you use for deployment automation?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q4" value="None" required> 
+          <label class="form-check-label">None - We do not use CI/CD automation</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q4" value="GitHub Actions"> 
+          <label class="form-check-label">GitHub Actions</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q4" value="Jenkins"> 
+          <label class="form-check-label">Jenkins</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q4" value="Azure DevOps Pipelines"> 
+          <label class="form-check-label">Azure DevOps Pipelines</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q4" value="GitLab CI"> 
+          <label class="form-check-label">GitLab CI</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q4" value="Other"> 
+          <label class="form-check-label">Other (please specify):</label>
+          <input type="text" name="q4_other" class="form-control mt-2">
+        </div>
+      </div>
+
+      <!-- Question 5 - Expanded -->
+      <div class="mb-3">
+        <label class="form-label">5. How do you manage access to development tools and environments?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q5" value="None" required> 
+          <label class="form-check-label">No formal process in place</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q5" value="Software Centre"> 
+          <label class="form-check-label">Microsoft Software Centre</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q5" value="Self Service Portal"> 
+          <label class="form-check-label">IT Self-Service Portal</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q5" value="Package Manager">
+          <label class="form-check-label">Package Manager (e.g., Chocolatey, Homebrew)</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q5" value="Cloud Development"> 
+          <label class="form-check-label">Cloud Development Environment (e.g., GitHub Codespaces, GitPod)</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q5" value="Manual IT Request">
+          <label class="form-check-label">Manual IT Service Desk Request</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q5" value="Other">
+          <label class="form-check-label">Other (please specify):</label>
+          <input type="text" name="q5_other" class="form-control mt-2">
+        </div>
+      </div>
+
+      <!-- Question 6 -->
+      <div class="mb-3">
+        <label class="form-label">6. What type of automated testing or data quality checks do you have in place?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q6" value="None" required> 
+          <label class="form-check-label">None - No automated testing in place</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q6" value="Regression Testing"> 
+          <label class="form-check-label">Regression Testing</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q6" value="Unit Testing"> 
+          <label class="form-check-label">Unit Testing</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q6" value="Data Quality Checks">
+          <label class="form-check-label">Data Quality Checks</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q6" value="Other">
+          <label class="form-check-label">Other (please specify):</label>
+          <input type="text" name="q6_other" class="form-control mt-2">
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="text-center">
+        <button type="submit" class="nhs-button">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
